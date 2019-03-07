@@ -19,7 +19,7 @@ def download_image_by_url(urls, num_worker, save_folder):
     return ret
 
 
-def get_image_from_url(url, save_folder):
+def get_image_from_url(url, save_folder=None):
     ''' Download an image then save it as an jpg format
     '''
     img = np.array(Image.open(urlopen(url)))    
