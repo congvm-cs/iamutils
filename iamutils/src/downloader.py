@@ -4,7 +4,7 @@ import cv2
 from urllib.request import urlopen
 from PIL import Image
 import os
-import ailabtools
+from .multi_processing import pool_worker
 
 
 def download_image_by_url(urls, num_worker, save_folder):
@@ -15,7 +15,7 @@ def download_image_by_url(urls, num_worker, save_folder):
             save_folder: A folder to use to save images
     '''
     inputs = [(url, sfolder) for (url, sfolder) in zip(urls, [save_folder]*len(urls))]
-    ret = ailabtools.ailab_multiprocessing.pool_worker(inputs=inputs, target=get_image_from_url, num_worker=num_worker)
+    ret = pool_worker(inputs=inputs, target=get_image_from_url, num_worker=num_worker)
     return ret
 
 
