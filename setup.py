@@ -5,5 +5,6 @@ setup(name='iamutils',
       version='1.0',
       description='CongVM Utilities',
       author='congvm',
+      license='MIT',
       url='https://github.com/vocong25/iamutils.git'
      )
